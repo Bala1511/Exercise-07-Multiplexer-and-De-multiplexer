@@ -57,6 +57,20 @@ Program for flipflops  and verify its truth table in quartus using Verilog progr
 Developed by: 
 RegisterNumber:  
 */
+```
+module plexer(I0,I1,I2,I3,S0,S1,Y);
+input I0,I1,I2,I3,S0,S1;
+output Y;
+wire P,Q,R,S,S0c,S1c;
+not(S0c,S0);
+not(S1c,S1);
+and(P,S0c,S1c,I0);
+and(Q,S0c,S1,I1);
+and(R,S0,S1c,I2);
+and(S,S0,S1,I3);
+or(Y,P,Q,R,S);
+endmodule
+```
 
 
 
@@ -67,8 +81,7 @@ RegisterNumber:
 
 
 
-
-
+![7de](https://github.com/Bala1511/Exercise-07-Multiplexer-and-De-multiplexer/assets/118680410/bd32433b-4dc2-46be-843b-fe0bef95ea35)
 
 
 
@@ -86,3 +99,4 @@ RegisterNumber:
 
 
 ### RESULTS 
+
