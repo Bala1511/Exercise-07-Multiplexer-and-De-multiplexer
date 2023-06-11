@@ -54,9 +54,10 @@ If the control input changes to AB = 10, then all the gates are restricted excep
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: BALA MURUGAN P
+RegisterNumber:  212222230017
 */
+MULTI MUX
 ```
 module plexer(I0,I1,I2,I3,S0,S1,Y);
 input I0,I1,I2,I3,S0,S1;
@@ -71,6 +72,20 @@ and(S,S0,S1,I3);
 or(Y,P,Q,R,S);
 endmodule
 ```
+DEMUX 
+```
+module demux(Y0,Y1,Y2,Y3,S0,S1,I);
+input S0,S1,I;
+output Y0,Y1,Y2,Y3;
+wire S0C,S1C;
+not(S0C,S0);
+not(S1C,S1);
+and(Y0,I,S0C,S1C);
+and(Y1,I,S0C,S1);
+and(Y2,I,S0,S1C);
+and(Y3,I,S0,S1);
+endmodule
+```
 
 
 
@@ -83,20 +98,26 @@ endmodule
 
 ![7de](https://github.com/Bala1511/Exercise-07-Multiplexer-and-De-multiplexer/assets/118680410/bd32433b-4dc2-46be-843b-fe0bef95ea35)
 
+![dmux](https://github.com/Bala1511/Exercise-07-Multiplexer-and-De-multiplexer/assets/118680410/e833a56f-68eb-461c-a860-7bf4f46ebd4a)
 
 
 ### TIMING DIGRAMS  
+![mux](https://github.com/Bala1511/Exercise-07-Multiplexer-and-De-multiplexer/assets/118680410/2fcb1fd7-7c84-48e7-bcd0-c9c26884c50c)
 
 
+![dmux1](https://github.com/Bala1511/Exercise-07-Multiplexer-and-De-multiplexer/assets/118680410/7336898c-4309-4131-adb3-a82b82ef62c9)
 
 
 
 ### TRUTH TABLE 
 
 
+![mux1](https://github.com/Bala1511/Exercise-07-Multiplexer-and-De-multiplexer/assets/118680410/09016b2c-bfd7-48fa-81b2-42385090b58d)
 
 
+![dmux2](https://github.com/Bala1511/Exercise-07-Multiplexer-and-De-multiplexer/assets/118680410/8eebdf52-9e59-4347-adae-920f41eb5011)
 
 
 ### RESULTS 
+Hence, 4x1 Multiplexer and 1x4 Demultiplexer is been implemented and verified using verilog programming and its output are validated.
 
